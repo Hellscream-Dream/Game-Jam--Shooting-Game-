@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dush0bxwf7jb"]
 
 [ext_resource type="PackedScene" uid="uid://grlo3hlsw63i" path="res://Scenes/player.tscn" id="1_ebmjs"]
+[ext_resource type="Script" uid="uid://cldk8jitrc2k0" path="res://Scripts/game.gd" id="1_qxrlw"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_0yooa"]
 normal = Vector2(0, 1)
@@ -16,8 +17,9 @@ normal = Vector2(-0.9999997, -0.00084889616)
 distance = -1152.6011
 
 [node name="Game" type="Node2D" unique_id=1490394983]
+script = ExtResource("1_qxrlw")
 
-[node name="CharacterBody2D" parent="." unique_id=5517544 instance=ExtResource("1_ebmjs")]
+[node name="Player" parent="." unique_id=5517544 instance=ExtResource("1_ebmjs")]
 position = Vector2(640, 276)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1127945122]
@@ -33,3 +35,9 @@ shape = SubResource("WorldBoundaryShape2D_vvptk")
 
 [node name="Right" type="CollisionShape2D" parent="StaticBody2D" unique_id=1682636060]
 shape = SubResource("WorldBoundaryShape2D_wdsay")
+
+[node name="Timer" type="Timer" parent="." unique_id=191221169]
+wait_time = 0.5
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
