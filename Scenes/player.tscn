@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://grlo3hlsw63i"]
+
+[ext_resource type="Script" uid="uid://bter6ntj13br5" path="res://Scripts/player.gd" id="1_4flbx"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0yooa"]
+radius = 52.77778
+height = 122.22224
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=5517544]
+position = Vector2(-23, 0)
+scale = Vector2(0.6, 0.6)
+script = ExtResource("1_4flbx")
+
+[node name="Polygon2D2" type="Polygon2D" parent="." unique_id=1566301019]
+position = Vector2(4.717513, 3.3333333)
+scale = Vector2(0.79661024, 1)
+color = Color(1, 0.5266667, 0.29000002, 1)
+polygon = PackedVector2Array(15, -6.666667, 15, 1.6666666, 113.33333, 5, 113.33333, -13.333333)
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=319139914]
+position = Vector2(37.94203, 6.257604)
+scale = Vector2(0.4956522, 1.0608253)
+color = Color(0.3647059, 0.2627451, 0.6313726, 1)
+polygon = PackedVector2Array(-89.939606, -43.605293, -90.000015, 31.807682, 37.777763, 27.094372, 37.77778, -36.168575)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1412737081]
+position = Vector2(25, 0)
+scale = Vector2(0.6, 0.6)
+shape = SubResource("CapsuleShape2D_0yooa")
+
+[node name="ShootyPart" type="Node2D" parent="." unique_id=516617968]
+position = Vector2(101.66669, 0)
