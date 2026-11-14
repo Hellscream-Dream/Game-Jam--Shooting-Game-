@@ -3,6 +3,7 @@ extends CharacterBody2D
 const SPEED = 200
 var bullet_scene = preload("res://Scenes/bullet.tscn")
 @onready var shooty_part = $ShootyPart
+var isReloading = false
 
 func _physics_process(delta: float) -> void:
 	look_at(get_global_mouse_position())
@@ -17,3 +18,10 @@ func _physics_process(delta: float) -> void:
 		bullet.direction = (get_global_mouse_position() - global_position).normalized()
 		$/root/Game.add_child(bullet)
 	move_and_slide()
+	
+	for i in range(get_slide_collision_count()):
+		var collision = get_slide_collision(i)
+		
+		if collision.get_collider().is_in_group("enemies") and not(isReloading):
+			isReloading = true
+			get_tree().reload_current_scene()
