@@ -3,8 +3,6 @@
 [ext_resource type="Script" uid="uid://bter6ntj13br5" path="res://Scripts/player.gd" id="1_4flbx"]
 [ext_resource type="Texture2D" uid="uid://dncs1va8xc76j" path="res://Asset/player.png" id="2_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://dmk3ff6w2nko8" path="res://Asset/chapeau.png" id="3_6t5aa"]
-[ext_resource type="AudioStream" uid="uid://bfxnc68x56y2t" path="res://Music/shoot.wav" id="4_vgqql"]
-[ext_resource type="AudioStream" uid="uid://bwqd8jbs6yvpt" path="res://Music/player start or revive.wav" id="5_fkybt"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0yooa"]
 radius = 52.77778
@@ -43,12 +41,5 @@ position = Vector2(101.66669, 0)
 
 [node name="immune time" type="Timer" parent="." unique_id=639046271]
 wait_time = 0.5
-
-[node name="ShootSFX" type="AudioStreamPlayer2D" parent="." unique_id=186506623]
-stream = ExtResource("4_vgqql")
-volume_db = 5.0
-
-[node name="ReviveSFX" type="AudioStreamPlayer2D" parent="." unique_id=1128162432]
-stream = ExtResource("5_fkybt")
 
 [connection signal="timeout" from="immune time" to="." method="_on_immune_time_timeout"]

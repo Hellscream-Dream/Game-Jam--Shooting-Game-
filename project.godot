@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Shooting jam"
-run/main_scene="uid://brcdma6e2l2y"
+run/main_scene="uid://dush0bxwf7jb"
 config/features=PackedStringArray("4.7", "Mobile")
 
 [display]
