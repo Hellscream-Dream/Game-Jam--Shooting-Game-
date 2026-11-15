@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dqkwgyhigaupw"
-path="res://.godot/imported/player gets hit by enemy.wav-0fcd15ffe162b48756bce7189132e747.sample"
+path="res://.godot/imported/player gets hit by enemy.wav-44668c4ab33f6be80640b5c1d0048f7f.sample"
 
 [deps]
 
-source_file="res://player gets hit by enemy.wav"
-dest_files=["res://.godot/imported/player gets hit by enemy.wav-0fcd15ffe162b48756bce7189132e747.sample"]
+source_file="res://Music/player gets hit by enemy.wav"
+dest_files=["res://.godot/imported/player gets hit by enemy.wav-44668c4ab33f6be80640b5c1d0048f7f.sample"]
 
 [params]
 

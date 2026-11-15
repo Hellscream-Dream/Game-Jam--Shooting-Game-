@@ -13,3 +13,9 @@ func _on_timer_timeout() -> void:
 		enemy.global_position.y = randi_range(0, get_viewport_rect().size.y)
 	
 	add_child(enemy)
+
+func update_score(score : int ) -> void:
+	$HUD/ScoreLabel.text = "Take down: %d"  %score
+
+func update_life(life : int ) -> void:
+	$HUD/LifeLabel.text = "Health: %d"  %life

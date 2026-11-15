@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bv3e2nnyfjixx"
-path="res://.godot/imported/bullet hits walls.wav-1e53c97c6a41d6b537c5fca42ab69a56.sample"
+path="res://.godot/imported/bullet hits walls.wav-810dc856d56b5d5cec65484d23f49075.sample"
 
 [deps]
 
-source_file="res://bullet hits walls.wav"
-dest_files=["res://.godot/imported/bullet hits walls.wav-1e53c97c6a41d6b537c5fca42ab69a56.sample"]
+source_file="res://Music/bullet hits walls.wav"
+dest_files=["res://.godot/imported/bullet hits walls.wav-810dc856d56b5d5cec65484d23f49075.sample"]
 
 [params]
 

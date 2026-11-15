@@ -8,6 +8,9 @@ var isImmune = false
 static var bonusHp = 0
 var health = 100 + 10 * bonusHp
 
+func _ready() -> void:
+	get_tree().call_group("game", "update_life", health)
+	
 func _physics_process(delta: float) -> void:
 	look_at(get_global_mouse_position())
 
@@ -28,7 +31,8 @@ func _physics_process(delta: float) -> void:
 			$"immune time".start()
 			isImmune = true
 			health -= 10			
-			print(health)
+			get_tree().call_group("game", "update_life", health)
+			print("Health", health)
 	if health <= 0:
 		bonusHp += 1
 		get_tree().reload_current_scene()

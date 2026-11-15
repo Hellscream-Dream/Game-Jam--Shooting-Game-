@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bwqd8jbs6yvpt"
-path="res://.godot/imported/player start or revive.wav-201ea906fc129cfc05912c82da5ce57b.sample"
+path="res://.godot/imported/player start or revive.wav-d9bce2b24bc63afde381199422cab699.sample"
 
 [deps]
 
-source_file="res://player start or revive.wav"
-dest_files=["res://.godot/imported/player start or revive.wav-201ea906fc129cfc05912c82da5ce57b.sample"]
+source_file="res://Music/player start or revive.wav"
+dest_files=["res://.godot/imported/player start or revive.wav-d9bce2b24bc63afde381199422cab699.sample"]
 
 [params]
 

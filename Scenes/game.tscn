@@ -2,28 +2,29 @@
 
 [ext_resource type="PackedScene" uid="uid://grlo3hlsw63i" path="res://Scenes/player.tscn" id="1_ebmjs"]
 [ext_resource type="Script" uid="uid://cldk8jitrc2k0" path="res://Scripts/game.gd" id="1_qxrlw"]
-[ext_resource type="AudioStream" uid="uid://01lu0dxsjf8a" path="res://gameplay music.wav" id="3_wrm1d"]
+[ext_resource type="AudioStream" uid="uid://01lu0dxsjf8a" path="res://Music/gameplay music.wav" id="3_wrm1d"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_0yooa"]
 normal = Vector2(0, 1)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_fnlf1"]
-distance = -647.0
+distance = -523.80066
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_vvptk"]
 normal = Vector2(1, 0)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_wdsay"]
 normal = Vector2(-0.9999997, -0.00084889616)
-distance = -1152.6011
+distance = -987.1085
 
-[node name="Game" type="Node2D" unique_id=1490394983]
+[node name="Game" type="Node2D" unique_id=1490394983 groups=["game"]]
 script = ExtResource("1_qxrlw")
 
 [node name="Player" parent="." unique_id=5517544 instance=ExtResource("1_ebmjs")]
 position = Vector2(541, 312)
 
 [node name="Wall" type="StaticBody2D" parent="." unique_id=1127945122 groups=["walls"]]
+scale = Vector2(1.168064, 1.2371118)
 
 [node name="Top" type="CollisionShape2D" parent="Wall" unique_id=37048566]
 shape = SubResource("WorldBoundaryShape2D_0yooa")
@@ -38,11 +39,26 @@ shape = SubResource("WorldBoundaryShape2D_vvptk")
 shape = SubResource("WorldBoundaryShape2D_wdsay")
 
 [node name="Timer" type="Timer" parent="." unique_id=191221169]
-wait_time = 0.5
+wait_time = 0.6
 autostart = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=625491466]
 stream = ExtResource("3_wrm1d")
 autoplay = true
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1287644069]
+
+[node name="ScoreLabel" type="Label" parent="HUD" unique_id=1946693531]
+offset_right = 102.0
+offset_bottom = 32.0
+theme_override_font_sizes/font_size = 32
+text = "Take down: 0"
+
+[node name="LifeLabel" type="Label" parent="HUD" unique_id=694093924]
+offset_top = 45.0
+offset_right = 203.0
+offset_bottom = 90.0
+theme_override_font_sizes/font_size = 32
+text = "Health : 100"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

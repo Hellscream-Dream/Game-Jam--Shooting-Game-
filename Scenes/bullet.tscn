@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dl75o2ss7l8bc"]
 
 [ext_resource type="Script" uid="uid://blmlhdfvwxlkb" path="res://Scripts/bullet.gd" id="1_xjght"]
+[ext_resource type="Texture2D" uid="uid://blodlo3mmv2ga" path="res://Asset/pois.png" id="2_oduel"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0yooa"]
 radius = 25.019993
@@ -13,7 +14,12 @@ script = ExtResource("1_xjght")
 scale = Vector2(0.5, 0.5)
 shape = SubResource("CircleShape2D_0yooa")
 
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1573602293]
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("2_oduel")
+
 [node name="Polygon2D" type="Polygon2D" parent="." unique_id=219552232]
+visible = false
 scale = Vector2(0.5, 0.5)
 color = Color(2.7675183e-06, 0.6712364, 0.18501168, 1)
 polygon = PackedVector2Array(0, -25, 8, -23, 15, -19, 20, -14, 23, -7, 24, 1, 23, 10, 20, 15, 18, 17, 14, 21, 6, 24, -3, 25, -14, 20, -21, 13, -25, 2, -23, -11, -16, -19, -8, -23)

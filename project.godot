@@ -27,6 +27,7 @@ enabled=PackedStringArray("res://addons/godot_mcp_bridge/plugin.cfg")
 
 enemies=""
 walls=""
+game=""
 
 [input]
 

@@ -1,13 +1,15 @@
 [gd_scene format=3 uid="uid://grlo3hlsw63i"]
 
 [ext_resource type="Script" uid="uid://bter6ntj13br5" path="res://Scripts/player.gd" id="1_4flbx"]
+[ext_resource type="Texture2D" uid="uid://dncs1va8xc76j" path="res://Asset/player.png" id="2_cvnsp"]
+[ext_resource type="Texture2D" uid="uid://dmk3ff6w2nko8" path="res://Asset/chapeau.png" id="3_6t5aa"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0yooa"]
 radius = 52.77778
 height = 122.22224
 
 [node name="Player" type="CharacterBody2D" unique_id=5517544]
-position = Vector2(-23, 0)
+position = Vector2(-37, 0)
 scale = Vector2(0.6, 0.6)
 script = ExtResource("1_4flbx")
 
@@ -17,14 +19,20 @@ scale = Vector2(0.79661024, 1)
 color = Color(1, 0.5266667, 0.29000002, 1)
 polygon = PackedVector2Array(15, -6.666667, 15, 1.6666666, 113.33333, 5, 113.33333, -13.333333)
 
-[node name="Polygon2D" type="Polygon2D" parent="." unique_id=319139914]
-position = Vector2(37.94203, 6.257604)
-scale = Vector2(0.4956522, 1.0608253)
-color = Color(0.3647059, 0.2627451, 0.6313726, 1)
-polygon = PackedVector2Array(-89.939606, -43.605293, -90.000015, 31.807682, 37.777763, 27.094372, 37.77778, -36.168575)
+[node name="body" type="Sprite2D" parent="." unique_id=1509411684]
+position = Vector2(19.999998, -1.6666666)
+rotation = 1.5707964
+scale = Vector2(0.3, 0.35)
+texture = ExtResource("2_cvnsp")
+
+[node name="hat" type="Sprite2D" parent="." unique_id=338510317]
+position = Vector2(16.518063, -0.6305542)
+rotation = 1.5707964
+scale = Vector2(0.17381527, 0.11353403)
+texture = ExtResource("3_6t5aa")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1412737081]
-position = Vector2(25, 0)
+position = Vector2(28.333332, -1.6666669)
 scale = Vector2(0.6, 0.6)
 shape = SubResource("CapsuleShape2D_0yooa")
 
@@ -32,5 +40,6 @@ shape = SubResource("CapsuleShape2D_0yooa")
 position = Vector2(101.66669, 0)
 
 [node name="immune time" type="Timer" parent="." unique_id=639046271]
+wait_time = 0.5
 
 [connection signal="timeout" from="immune time" to="." method="_on_immune_time_timeout"]

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c8vt2l5acdng5"
+path="res://.godot/imported/music for potential menu (it loops).wav-ad8308a3b9dc7421e88f5bac48a1770b.sample"
+
+[deps]
+
+source_file="res://Music/music for potential menu (it loops).wav"
+dest_files=["res://.godot/imported/music for potential menu (it loops).wav-ad8308a3b9dc7421e88f5bac48a1770b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
