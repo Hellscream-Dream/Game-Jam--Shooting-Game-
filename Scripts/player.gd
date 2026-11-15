@@ -3,6 +3,8 @@ extends CharacterBody2D
 const SPEED = 200
 var bullet_scene = preload("res://Scenes/bullet.tscn")
 @onready var shooty_part = $ShootyPart
+@onready var shoot_SFX = $ShootSFX
+@onready var revive_SFX = $ReviveSFX 
 var isReloading = false
 var isImmune = false
 static var bonusHp = 0
@@ -10,6 +12,7 @@ var health = 100 + 10 * bonusHp
 
 func _ready() -> void:
 	get_tree().call_group("game", "update_life", health)
+	revive_SFX.play()
 	
 func _physics_process(delta: float) -> void:
 	look_at(get_global_mouse_position())
@@ -20,6 +23,7 @@ func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("shoot"):
 		var bullet = bullet_scene.instantiate()
+		shoot_SFX.play()
 		bullet.global_position = shooty_part.global_position
 		bullet.direction = (get_global_mouse_position() - global_position).normalized()
 		$/root/Game.add_child(bullet)
