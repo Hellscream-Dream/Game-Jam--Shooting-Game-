@@ -4,7 +4,6 @@
 [ext_resource type="Script" uid="uid://cldk8jitrc2k0" path="res://Scripts/game.gd" id="1_qxrlw"]
 [ext_resource type="Texture2D" uid="uid://djmkbykomqwk0" path="res://Untitled1_20261115115324.PNG" id="3_3dryh"]
 [ext_resource type="AudioStream" uid="uid://01lu0dxsjf8a" path="res://Music/gameplay music.wav" id="3_wrm1d"]
-[ext_resource type="Texture2D" uid="uid://kelfddsr04k7" path="res://Asset/Quit.png" id="4_3dryh"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_0yooa"]
 normal = Vector2(0, 1)
@@ -16433,7 +16432,7 @@ shape = SubResource("WorldBoundaryShape2D_wdsay")
 wait_time = 0.6
 autostart = true
 
-[node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="." unique_id=625491466]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=625491466]
 stream = ExtResource("3_wrm1d")
 autoplay = true
 
@@ -16536,20 +16535,4 @@ position = Vector2(-1.6665039, -1.6674805)
 scale = Vector2(0.2, 0.2)
 tile_set = SubResource("TileSet_ie1wr")
 
-[node name="SafeTime" type="Timer" parent="." unique_id=1270920512]
-wait_time = 5.0
-autostart = true
-
-[node name="Quit_Button" type="TextureButton" parent="." unique_id=762635249]
-offset_left = 1112.0
-offset_top = -19.000032
-offset_right = 2112.0
-offset_bottom = 980.99994
-rotation = 0.7886046
-scale = Vector2(0.08679094, 0.087596945)
-texture_normal = ExtResource("4_3dryh")
-texture_pressed = ExtResource("4_3dryh")
-
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="timeout" from="SafeTime" to="." method="_on_safe_time_timeout"]
-[connection signal="pressed" from="Quit_Button" to="." method="_on_quit_button_pressed"]
