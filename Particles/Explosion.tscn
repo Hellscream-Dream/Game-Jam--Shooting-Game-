@@ -20,7 +20,8 @@ flatness = 1.0
 initial_velocity_min = 20.0
 initial_velocity_max = 50.0
 gravity = Vector3(0, 1, 0)
-scale_max = 3.0
+scale_min = 23.51
+scale_max = 38.51
 scale_curve = SubResource("CurveTexture_ai44l")
 
 [node name="Boum" type="GPUParticles2D" unique_id=1405948643]

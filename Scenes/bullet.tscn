@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://blmlhdfvwxlkb" path="res://Scripts/bullet.gd" id="1_xjght"]
 [ext_resource type="Texture2D" uid="uid://blodlo3mmv2ga" path="res://Asset/pois.png" id="2_oduel"]
 [ext_resource type="PackedScene" uid="uid://b1lcu3cjuw1aq" path="res://Particles/Explosion.tscn" id="3_ycag2"]
+[ext_resource type="AudioStream" uid="uid://dqkwgyhigaupw" path="res://Music/player gets hit by enemy.wav" id="4_6afsh"]
+[ext_resource type="AudioStream" uid="uid://bv3e2nnyfjixx" path="res://Music/bullet hits walls.wav" id="5_odot3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0yooa"]
 radius = 25.019993
@@ -33,5 +35,12 @@ autostart = true
 [node name="Boum" parent="." unique_id=1405948643 instance=ExtResource("3_ycag2")]
 amount = 20
 lifetime = 2.0
+
+[node name="enemyDeath" type="AudioStreamPlayer2D" parent="." unique_id=1765896942]
+stream = ExtResource("4_6afsh")
+volume_db = 7.0
+
+[node name="hitsWall" type="AudioStreamPlayer2D" parent="." unique_id=318513436]
+stream = ExtResource("5_odot3")
 
 [connection signal="timeout" from="life time" to="." method="_on_timer_timeout"]
