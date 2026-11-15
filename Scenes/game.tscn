@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://grlo3hlsw63i" path="res://Scenes/player.tscn" id="1_ebmjs"]
 [ext_resource type="Script" uid="uid://cldk8jitrc2k0" path="res://Scripts/game.gd" id="1_qxrlw"]
 [ext_resource type="AudioStream" uid="uid://01lu0dxsjf8a" path="res://Music/gameplay music.wav" id="3_wrm1d"]
+[ext_resource type="Texture2D" uid="uid://kelfddsr04k7" path="res://Asset/Quit.png" id="4_3dryh"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_0yooa"]
 normal = Vector2(0, 1)
@@ -61,4 +62,15 @@ offset_bottom = 90.0
 theme_override_font_sizes/font_size = 32
 text = "Health : 100"
 
+[node name="Quit_Button" type="TextureButton" parent="." unique_id=762635249]
+offset_left = 1112.0
+offset_top = -19.000032
+offset_right = 2112.0
+offset_bottom = 980.99994
+rotation = 0.7886046
+scale = Vector2(0.08679094, 0.087596945)
+texture_normal = ExtResource("4_3dryh")
+texture_pressed = ExtResource("4_3dryh")
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="Quit_Button" to="." method="_on_quit_button_pressed"]

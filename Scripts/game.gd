@@ -19,3 +19,8 @@ func update_score(score : int ) -> void:
 
 func update_life(life : int ) -> void:
 	$HUD/LifeLabel.text = "Health: %d"  %life
+
+#######################################################################
+#Code fait par Anaïs:
+func _on_quit_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/menu.tscn")
