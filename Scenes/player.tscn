@@ -30,3 +30,7 @@ shape = SubResource("CapsuleShape2D_0yooa")
 
 [node name="ShootyPart" type="Node2D" parent="." unique_id=516617968]
 position = Vector2(101.66669, 0)
+
+[node name="immune time" type="Timer" parent="." unique_id=639046271]
+
+[connection signal="timeout" from="immune time" to="." method="_on_immune_time_timeout"]
