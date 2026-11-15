@@ -1,17 +1,28 @@
 [gd_scene format=3 uid="uid://brcdma6e2l2y"]
 
-[ext_resource type="Script" uid="uid://vju5sjm4m56c" path="res://menu.gd" id="1_cayip"]
-[ext_resource type="Texture2D" uid="uid://dryqdavwpu55u" path="res://Asset/Negro liso.jpg" id="2_cayip"]
+[ext_resource type="Script" uid="uid://vju5sjm4m56c" path="res://Scripts/menu.gd" id="1_cayip"]
 [ext_resource type="Texture2D" uid="uid://c8yswf105j16m" path="res://Asset/Play button.png" id="3_158mb"]
+[ext_resource type="Texture2D" uid="uid://bq30i5vrcjbmh" path="res://Asset/title_screen_credit.png" id="3_wwsa2"]
+[ext_resource type="AudioStream" uid="uid://c8vt2l5acdng5" path="res://Music/music for potential menu (it loops).wav" id="4_158mb"]
 
 [node name="Menu" type="Node2D" unique_id=100150384]
 script = ExtResource("1_cayip")
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=458401790]
+stream = ExtResource("4_158mb")
+autoplay = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1520671811]
+position = Vector2(576, 324.99997)
+scale = Vector2(0.6613859, 0.51465523)
+texture = ExtResource("3_wwsa2")
+
 [node name="TextureRect" type="TextureRect" parent="." unique_id=987939058]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -2.0
+offset_top = 2.0
+offset_right = 530.0
+offset_bottom = 301.0
 scale = Vector2(2.16943, 2.1728296)
-texture = ExtResource("2_cayip")
 
 [node name="TextureButton" type="TextureButton" parent="TextureRect" unique_id=529254974]
 layout_mode = 0
@@ -22,5 +33,15 @@ offset_bottom = 1097.1084
 scale = Vector2(0.1, 0.1)
 texture_normal = ExtResource("3_158mb")
 texture_pressed = ExtResource("3_158mb")
+
+[node name="Label" type="Label" parent="." unique_id=784335379]
+modulate = Color(0.48139998, 0.58, 0.28419998, 1)
+offset_left = 987.9999
+offset_top = 23.99997
+offset_right = 1173.9999
+offset_bottom = 98.99997
+rotation = 0.4466355
+text = "Bonus: First takedown grants you a random bonus score ! "
+autowrap_mode = 2
 
 [connection signal="pressed" from="TextureRect/TextureButton" to="." method="_on_texture_button_pressed"]
