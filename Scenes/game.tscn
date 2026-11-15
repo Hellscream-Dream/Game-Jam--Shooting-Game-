@@ -42,7 +42,7 @@ shape = SubResource("WorldBoundaryShape2D_wdsay")
 wait_time = 0.6
 autostart = true
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=625491466]
+[node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="." unique_id=625491466]
 stream = ExtResource("3_wrm1d")
 autoplay = true
 
@@ -61,4 +61,9 @@ offset_bottom = 90.0
 theme_override_font_sizes/font_size = 32
 text = "Health : 100"
 
+[node name="SafeTime" type="Timer" parent="." unique_id=1270920512]
+wait_time = 5.0
+autostart = true
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="SafeTime" to="." method="_on_safe_time_timeout"]
