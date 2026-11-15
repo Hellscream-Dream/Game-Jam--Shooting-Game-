@@ -23,11 +23,13 @@ func _physics_process(delta: float) -> void:
 		return
 	var body = collision.get_collider()
 	if body.is_in_group("enemies"):
+		takeDown += 1
+		print("Take down:", takeDown)
+		get_tree().call_group("game", "update_score", takeDown)
 		explosion.restart()
 		explosion.reparent(get_tree().current_scene, true)
 		enemyDeath.play()
 		enemyDeath.reparent(get_tree().current_scene, true)
-		get_tree().call_group("game", "update_score")
 		body.queue_free()
 		queue_free()
 		return

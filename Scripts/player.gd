@@ -8,7 +8,7 @@ var bullet_scene = preload("res://Scenes/bullet.tscn")
 var isReloading = false
 var isImmune = false
 static var bonusHp = 0
-var health = 50 + 10 * bonusHp
+var health = 100 + 10 * bonusHp
 
 func _ready() -> void:
 	get_tree().call_group("game", "update_life", health)
@@ -36,6 +36,7 @@ func _physics_process(delta: float) -> void:
 			isImmune = true
 			health -= 10			
 			get_tree().call_group("game", "update_life", health)
+			print("Health", health)
 	if health <= 0:
 		bonusHp += 1
 		get_tree().reload_current_scene()

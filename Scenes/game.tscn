@@ -16536,15 +16536,6 @@ position = Vector2(-1.6665039, -1.6674805)
 scale = Vector2(0.2, 0.2)
 tile_set = SubResource("TileSet_ie1wr")
 
-[node name="again_label" type="Label" parent="HUD" unique_id=1194824725]
-modulate = Color(0.65882355, 0.14509805, 0.14509805, 1)
-offset_left = 551.0
-offset_top = 306.0
-offset_right = 638.0
-offset_bottom = 351.0
-theme_override_font_sizes/font_size = 32
-text = "Again"
-
 [node name="SafeTime" type="Timer" parent="." unique_id=1270920512]
 wait_time = 5.0
 autostart = true
@@ -16559,11 +16550,6 @@ scale = Vector2(0.08679094, 0.087596945)
 texture_normal = ExtResource("4_3dryh")
 texture_pressed = ExtResource("4_3dryh")
 
-[node name="againShowingTime" type="Timer" parent="." unique_id=487379243]
-one_shot = true
-autostart = true
-
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="SafeTime" to="." method="_on_safe_time_timeout"]
 [connection signal="pressed" from="Quit_Button" to="." method="_on_quit_button_pressed"]
-[connection signal="timeout" from="againShowingTime" to="." method="_on_again_showing_time_timeout"]
