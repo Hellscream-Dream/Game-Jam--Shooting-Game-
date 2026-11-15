@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @onready var player = $/root/Game/Player
+
 const SPEED = 100
 
 func _physics_process(delta: float) -> void:
